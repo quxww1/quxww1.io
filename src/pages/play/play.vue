@@ -140,6 +140,7 @@ export default {
     //背景图地址
     bg() {
       return `/static/bg/bg${this.num}.jpg`;
+      // return `https://io-bg.oss-cn-beijing.aliyuncs.com/bg/bg${this.num}.jpg?Expires=1544912789&OSSAccessKeyId=TMP.AQFrSPu-9u0u2DUiwcPR1nl0BknZeyp5ncXNsQYv8eoIFMmdd3ries_WS45IADAtAhRdEJhTzU8XINF5pCjPknepJoIwLAIVALbT8gVCcLlX7Lr4nqvPw7jyKPTX&Signature=Y2boIarHasU6ZRCwpg8U1gI%2B0ds%3D` 
     },
     //背景透明度
     opacity() {
