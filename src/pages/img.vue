@@ -15,7 +15,7 @@ export default {
   },
   computed: {
     i() {
-      return `https://yangzj1992-1251901721.cos.ap-beijing.myqcloud.com/images/TKL/wall-${
+      return `link${
         this.num
       }.jpg`;
     }
