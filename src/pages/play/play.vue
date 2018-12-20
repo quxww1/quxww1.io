@@ -16,12 +16,12 @@
           <span class="hidden-sm-and-down">|</span>
           <div class="item zhihu hidden-sm-and-down " @click=skip(4)>知</div>
           <!-- 微信二维码 -->
-          <img class="qrcode" :style="{top:top + 'px'}" src="/static/bdfdd497f10b05f3039f058bd561d3d.jpg" alt="">
+          <img class="qrcode" :style="{top:top + 'px'}" src="https://io-bg.oss-cn-beijing.aliyuncs.com/info/bdfdd497f10b05f3039f058bd561d3d.jpg" alt="">
       </div>
       <!-- 背景图 -->
       <div class="bg-box"  :style="{width:w + 'px',height:h + 'px',opacity:opacity}">
-        <img :src="bg" id="bg" alt="" v-show="!isChange">
-        <img src="/static/buffer.jpg" id="buffer" v-show="isChange" alt="">
+        <img :src="bg" :class="{skew:skew}" id="bg" alt="" v-show="!isChange">
+        <img src="https://io-bg.oss-cn-beijing.aliyuncs.com/info/buffer.jpg" id="buffer" v-show="isChange" alt="">
       </div>
       <!-- 左上角换新壁纸按钮 -->
       <i class="hidden-sm-and-down el-icon-refresh change-bg" :class="{a:isA}" @click="changeBg"></i>
@@ -43,7 +43,7 @@
       <div class="right hidden-sm-and-down" @click.stop="rightBoxClick" :style="{height:h + 'px',right:right+'px'}">
         <div class="bg"></div>
         <div class="content">
-          <img class="head-img" src="/static/headimg.jpg" alt="">
+          <img class="head-img" src="https://io-bg.oss-cn-beijing.aliyuncs.com/info/headimg.jpg" alt="">
           <p class="title">屈向的地盘</p>
           <h1>滑我改变背景透明度</h1>
           <div class="block">
@@ -100,9 +100,10 @@ export default {
       tipsTop: -100,
 
       //投影度滑块的值
-      value2: 50,
+      value2: 70,
       // right:-400,
-      right: -350
+      right: -350,
+      skew:true
     };
   },
   mounted: function() {
@@ -219,7 +220,9 @@ export default {
     createNum() {
       let maxNum = 35;
       let minNum = 1;
+      this.skew = false;
       this.num = parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
+      this.skew = true;
     },
     //显示右侧弹出盒子
     rightShow() {
@@ -308,7 +311,6 @@ $cn: cn;
 }
 .bg-box {
   position: fixed;
-
   top: 0;
   left: 0;
   z-index: -1;
@@ -324,6 +326,17 @@ $cn: cn;
       width: 100%;
       height: 100%;
       min-width: 1200px;
+    }
+  }
+  .skew{
+    animation: skew 26s infinite linear;
+  }
+  @keyframes skew {
+    0%{
+      transform: scale(1);
+    }
+    100%{
+      transform: scale(1.5);
     }
   }
 }
