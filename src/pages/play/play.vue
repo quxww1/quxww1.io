@@ -448,7 +448,7 @@ $cn: cn;
   text-align: center;
   font-size: 30px;
   font-family: $en;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 /*右上角按钮*/
