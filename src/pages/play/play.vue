@@ -16,12 +16,12 @@
           <span class="hidden-sm-and-down">|</span>
           <div class="item zhihu hidden-sm-and-down " @click=skip(4)>知</div>
           <!-- 微信二维码 -->
-          <img class="qrcode" :style="{top:top + 'px'}" src="http://quxww1.oss-cn-beijing.aliyuncs.com/githubio/weixin.jpg" alt="">
+          <img class="qrcode" :style="{top:top + 'px'}" src="https://quxww1.oss-cn-beijing.aliyuncs.com/githubio/weixin.jpg" alt="">
       </div>
       <!-- 背景图 -->
       <div class="bg-box"  :style="{width:w + 'px',height:h + 'px',opacity:opacity}">
         <img :src="bg" :class="{skew:skew}" id="bg" alt="" v-show="!isChange">
-        <img src="http://quxww1.oss-cn-beijing.aliyuncs.com/githubio/buffer.jpg" id="buffer" v-show="isChange" alt="">
+        <img src="https://quxww1.oss-cn-beijing.aliyuncs.com/githubio/buffer.jpg" id="buffer" v-show="isChange" alt="">
       </div>
       <!-- 左上角换新壁纸按钮 -->
       <i class="hidden-sm-and-down el-icon-refresh change-bg" :class="{a:isA}" @click="changeBg"></i>
@@ -43,7 +43,7 @@
       <div class="right hidden-sm-and-down" @click.stop="rightBoxClick" :style="{height:h + 'px',right:right+'px'}">
         <div class="bg"></div>
         <div class="content">
-          <img class="head-img" src="http://quxww1.oss-cn-beijing.aliyuncs.com/githubio/headimg.jpg" alt="">
+          <img class="head-img" src="https://quxww1.oss-cn-beijing.aliyuncs.com/githubio/headimg.jpg" alt="">
           <p class="title">屈向的地盘</p>
           <h1>滑我改变背景透明度</h1>
           <div class="block">
@@ -122,6 +122,7 @@ export default {
       if (this.$route.params.root == 1) return;
       document.body.removeChild(document.getElementById("loading"));
     });
+    console.log('%c大胆！竟敢打开我的控制台 哼！','color:#2985FB;font-weight:bold')
   },
   created() {
     //创建随机背景图序号
@@ -140,7 +141,7 @@ export default {
   computed: {
     //背景图地址
     bg() {
-      return `http://quxww1.oss-cn-beijing.aliyuncs.com/githubio/bg${this.num}.jpg` 
+      return `https://quxww1.oss-cn-beijing.aliyuncs.com/githubio/bg${this.num}.jpg` 
     },
     //背景透明度
     opacity() {
@@ -239,12 +240,12 @@ export default {
 @font-face {
   font-family: en;
   /* src: url("/static/en.ttf"); */
-  src: url("http://quxww1.oss-cn-beijing.aliyuncs.com/githubio/en.ttf");
+  src: url("https://quxww1.oss-cn-beijing.aliyuncs.com/githubio/en.ttf");
 }
 @font-face {
   font-family: cn;
   /* src: url("/static/cn.ttf"); */
-  src: url("http://quxww1.oss-cn-beijing.aliyuncs.com/githubio/cn.ttf");
+  src: url("https://quxww1.oss-cn-beijing.aliyuncs.com/githubio/cn.ttf");
 }
 $en: en;
 $cn: cn;
