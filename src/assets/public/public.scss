@@ -1,0 +1,13 @@
+$color:red;
+@font-face {
+    font-family: en;
+    // src: url("/static/en.ttf");
+    src: url("https://io-bg.oss-cn-beijing.aliyuncs.com/font/en.ttf");
+  }
+  @font-face {
+    font-family: cn;
+    // src: url("/static/cn.ttf"); 
+    src: url("https://io-bg.oss-cn-beijing.aliyuncs.com/font/cn.ttf");
+  }
+  $cn:cn;
+  $en:en;
