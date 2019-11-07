@@ -51,6 +51,7 @@
           </div>
         </div>
       </div>
+      <p class="look" @click="look">LOOK</p>
   </div>
 </template>
 <script>
@@ -103,7 +104,7 @@ export default {
       value2: 70,
       // right:-400,
       right: -350,
-      skew:true
+      skew: true
     };
   },
   mounted: function() {
@@ -122,7 +123,10 @@ export default {
       if (this.$route.params.root == 1) return;
       document.body.removeChild(document.getElementById("loading"));
     });
-    console.log('%c大胆！竟敢打开我的控制台 哼！','color:#2985FB;font-weight:bold')
+    console.log(
+      "%c大胆！竟敢打开我的控制台 哼！",
+      "color:#2985FB;font-weight:bold"
+    );
   },
   created() {
     //创建随机背景图序号
@@ -141,7 +145,9 @@ export default {
   computed: {
     //背景图地址
     bg() {
-      return `https://quxww1.oss-cn-beijing.aliyuncs.com/githubio/bg${this.num}.jpg` 
+      return `https://quxww1.oss-cn-beijing.aliyuncs.com/githubio/bg${
+        this.num
+      }.jpg`;
     },
     //背景透明度
     opacity() {
@@ -228,8 +234,14 @@ export default {
     rightShow() {
       this.right = 0;
     },
-    //点击右侧弹出盒子
-    rightBoxClick() {}
+    //点击空白处隐藏右侧弹出盒子
+    rightBoxClick() {},
+    look() {
+      const { href } = this.$router.resolve({
+        name: "look"
+      });
+      window.open(href, "_blank", "toolbar=yes, width=1300, height=900");
+    }
   }
 };
 </script>
@@ -237,18 +249,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang= 'scss'>
 @import "element-ui/lib/theme-chalk/display.css";
-@font-face {
-  font-family: en;
-  /* src: url("/static/en.ttf"); */
-  src: url("https://quxww1.oss-cn-beijing.aliyuncs.com/githubio/en.ttf");
-}
-@font-face {
-  font-family: cn;
-  /* src: url("/static/cn.ttf"); */
-  src: url("https://quxww1.oss-cn-beijing.aliyuncs.com/githubio/cn.ttf");
-}
-$en: en;
-$cn: cn;
+
 .nav {
   display: flex;
   justify-content: center;
@@ -330,14 +331,14 @@ $cn: cn;
       min-width: 1200px;
     }
   }
-  .skew{
+  .skew {
     animation: skew 26s infinite linear;
   }
   @keyframes skew {
-    0%{
+    0% {
       transform: scale(1);
     }
-    100%{
+    100% {
       transform: scale(1.5);
     }
   }
@@ -431,10 +432,9 @@ $cn: cn;
 .to-old {
   font-size: 13px;
   position: fixed;
-  bottom: 30px;
+  bottom: 10px;
   right: 30px;
   color: gray;
-  font-size: cn;
   cursor: pointer;
   font-family: $cn;
   &:hover {
@@ -527,8 +527,19 @@ $cn: cn;
   transform: translate(-50%);
   font-family: $en;
 }
-.qux{
+.qux {
   font-family: $en;
 }
-
+.look {
+  font-size: 13px;
+  position: fixed;
+  bottom: 10px;
+  left: 30px;
+  color: gray;
+  cursor: pointer;
+  font-family: $en;
+  &:hover {
+    color: rgb(85, 132, 238);
+  }
+}
 </style>

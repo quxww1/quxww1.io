@@ -47,6 +47,7 @@ export default {
   },
   //星空背景动态图
   mounted: function() {
+
     document.body.parentNode.style.overflow = "hidden";
     var num = 700;
     var w = window.innerWidth;
@@ -427,6 +428,7 @@ export default {
       },
       false
     );
+    document.body.removeChild(document.getElementById("loading"));
   },
   watch: {},
   methods: {
